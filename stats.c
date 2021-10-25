@@ -11,7 +11,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 {
 	struct Stats Statistics_st;
 	int i;	
-	
+	/*Incase if the numberset is an inavlid Data ------ TestCase 2*/
 	if((numberset == NULL) || (setlength == NULL_VALUE))
 	{
 	   Statistics_st.min = NAN;
@@ -19,6 +19,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 	   Statistics_st.average = NAN;
            Statistics_st.Totalsum = NAN;
 	}
+	/*Valid Data scenario ------ TestCase 1*/
 	else
 	{
 	   Statistics_st.min = numberset[0];
