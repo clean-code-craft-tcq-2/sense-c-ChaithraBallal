@@ -11,7 +11,8 @@
 extern int ledAlertCallCount;
 extern int emailAlertCallCount;
 
-extern void (*alerter_funcptr[ALERTS])(void);
+#define NUM_ALERTS 2
+extern void (*alerter_funcptr[NUM_ALERTS])(void);
 extern void check_and_alert(float maxThreshold, alerter_funcptr alerters, struct Stats computedStats);
 
 #endif
