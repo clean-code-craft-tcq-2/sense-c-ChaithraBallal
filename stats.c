@@ -16,8 +16,17 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 	Statistics_st.average = 0.0;
 	Statistics_st.Totalsum = 0.0;
 	
-	for(i=0; i<setlength; i++)
+	if((numberset == NULL) || (setlength == NULL_VALUE))
 	{
+	   Statistics_st.min = NAN;
+	   Statistics_st.max = NAN;
+	   Statistics_st.average = NAN;
+           Statistics_st.Totalsum = NAN;
+	}
+	else
+	{
+	   for(i=0; i<setlength; i++)
+	   {
 		Statistics_st.Totalsum += numberset[i]; /*Calculating the total sum*/
 		/*Fetch the minimum value*/
 		if(Statistics_st.min > numberset[i])
@@ -29,9 +38,11 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 		{
 	           Statistics_st.max = numberset[i];
 		}
+	   }
+	
+	    /* calculating the average of the elements*/
+	    Statistics_st.average = Statistics_st.Totalsum/setlength; 
 	}
-	/* calculating the average of the elements*/
-	Statistics_st.average = Statistics_st.Totalsum/setlength; 
 	return Statistics_st;	
 }
 
