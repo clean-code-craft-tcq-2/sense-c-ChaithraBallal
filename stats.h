@@ -4,7 +4,7 @@
  ***********************************************************************/
 
 #include "stdio.h"
-struct Stats_st compute_statistics(const float* numberset, int setlength);
+struct Stats compute_statistics(const float* numberset, int setlength);
 
 typedef struct 
 {
@@ -12,6 +12,6 @@ typedef struct
 	float max;             /*maximum of the array*/
 	float average;         /*average of the array*/
 	float Totalsum;        /*sum of the array*/
-} Stats;
+} Stats_st;
 
 
