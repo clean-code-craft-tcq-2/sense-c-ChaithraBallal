@@ -4,7 +4,7 @@
  ***********************************************************************/
 
 #include "stdio.h"
-struct Stats compute_statistics(const float* numberset, int setlength);
+struct Stats_st compute_statistics(const float* numberset, int setlength);
 
 typedef struct 
 {
