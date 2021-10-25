@@ -10,11 +10,7 @@
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
 	struct Stats Statistics_st;
-	int i;
-	Statistics_st.min = numberset[0];
-	Statistics_st.max = numberset[0];
-	Statistics_st.average = 0.0;
-	Statistics_st.Totalsum = 0.0;
+	int i;	
 	
 	if((numberset == NULL) || (setlength == NULL_VALUE))
 	{
@@ -25,6 +21,10 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 	}
 	else
 	{
+	   Statistics_st.min = numberset[0];
+	   Statistics_st.max = numberset[0];
+	   Statistics_st.average = 0.0;
+	   Statistics_st.Totalsum = 0.0;
 	   for(i=0; i<setlength; i++)
 	   {
 		Statistics_st.Totalsum += numberset[i]; /*Calculating the total sum*/
