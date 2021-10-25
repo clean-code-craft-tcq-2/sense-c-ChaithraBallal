@@ -6,31 +6,33 @@
 #include "stdio.h"
 #include "stats.h"
 #include "math.h"
+
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
-	struct Stats S;
+	struct Stats Statistics_st;
 	int i;
-	S.min = numberset[0];
-	S.max = numberset[0];
-	S.average = 0.0;
-	S.Totalsum = 0.0;
+	Statistics_st.min = numberset[0];
+	Statistics_st.max = numberset[0];
+	Statistics_st.average = 0.0;
+	Statistics_st.Totalsum = 0.0;
 	
 	for(i=0; i<setlength; i++)
 	{
-		S.Totalsum += numberset[i]; /*Calculating the total sum*/
+		Statistics_st.Totalsum += numberset[i]; /*Calculating the total sum*/
 		/*Fetch the minimum value*/
-		if(S.min > numberset[i])
+		if(Statistics_st.min > numberset[i])
 		{
-		   S.min = numberset[i];
+		   Statistics_st.min = numberset[i];
 		}
 		/*Fetch the maximum value*/
-		if (S.max < numberset[i])
+		if (Statistics_st.max < numberset[i])
 		{
-	           S.max = numberset[i];
+	           Statistics_st.max = numberset[i];
 		}
 	}
 	/* calculating the average of the elements*/
-	S.average = S.Totalsum/setlength; 
-	return S;	
+	Statistics_st.average = Statistics_st.Totalsum/setlength; 
+	return Statistics_st;	
 }
+
 
