@@ -18,4 +18,16 @@ struct Stats
 
 struct Stats compute_statistics(const float* numberset, int setlength);
 
+/*declarations related to TestCase */
+#define NUM_ALERTS 2
+
+typedef void (*alerter_Funcptr[NUM_ALERTS](void);
+	     
+void check_and_alert(float maxThreshold, alerter_Funcptr alerters, struct Stats computedStats);
+void emailAlerter(void);
+void ledAlerter(void);
+	      
+extern int emailAlertCallCount;
+extern int ledAlertCallCount;
+
 #endif
