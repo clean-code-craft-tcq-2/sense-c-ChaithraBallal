@@ -19,6 +19,5 @@ struct Stats
 struct Stats compute_statistics(const float* numberset, int setlength);
 
 #define NULL_VALUE 0
-#define NULL_PTR (void*)0
 
 #endif
