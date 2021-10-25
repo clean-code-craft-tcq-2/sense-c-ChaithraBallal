@@ -8,7 +8,7 @@
 
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
-	struct Stats S;
+	struct Stats_st S;
 	int i;
 	S.min = numberset[0];
 	S.max = numberset[0];
@@ -17,7 +17,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 	
 	for(i=0; i<setlength; i++)
 	{
-		S.Totalsum += numberset[i];
+		S.Totalsum += numberset[i]; /*Calculating the total sum*/
 		
 		if(S.min > numberset[i])
 		{
@@ -30,9 +30,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 		}
 	}
 	
-	S.average = S.Totalsum/setlength;
+	S.average = S.Totalsum/setlength; /* calculating the average of the elements*/
 	return S;	
 }
 
-int emailAlertCallCount = 0;
-int ledAlertCallCount = 0;
